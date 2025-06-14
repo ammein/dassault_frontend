@@ -8,7 +8,7 @@ import {GlslPipeline} from "glsl-pipeline";
  */
 
 
-export class MultipleElements {
+class MultipleElements {
     /**
      * Destroy status
      * @type {boolean}
@@ -18,9 +18,9 @@ export class MultipleElements {
     /**
      *
      * @param {HTMLCanvasElement} canvas
-     * @param {{[p: string]: any}} options
+     * @param {{[p: string]: any} | undefined} options
      */
-    constructor(canvas, options) {
+    constructor(canvas, options = {}) {
         this.canvas = canvas;
         let optionsMerge = Object.assign({}, {
             canvas: canvas,
@@ -28,7 +28,7 @@ export class MultipleElements {
             ...options
         })
 
-        if(canvas.getContext('2d') || canvas.getContext('webgl2') || canvas.getContext('webgl')) {
+        if (canvas.getContext('2d') || canvas.getContext('webgl2') || canvas.getContext('webgl')) {
             let newCanvas = document.createElement("canvas");
             newCanvas.id = canvas.id;
             newCanvas.classList.add(...canvas.classList)
@@ -44,8 +44,8 @@ export class MultipleElements {
          */
         this.glslInstances = {}
         this.renderer.autoClear = false;
-        this.renderer.setClearColor( 0xffffff, 1 );
-        this.renderer.setPixelRatio( window.devicePixelRatio );
+        this.renderer.setClearColor(0xffffff, 1);
+        this.renderer.setPixelRatio(window.devicePixelRatio);
     }
 
     /**
@@ -92,16 +92,14 @@ export class MultipleElements {
      * @returns {import('three').Material || undefined}
      */
     getMaterial(id, branch) {
-        if(this.glslInstances.length > 0) {
+        if (this.glslInstances.length > 0) {
             let pipeline = this.glslInstances[id];
 
-            if(pipeline && branch) {
+            if (pipeline && branch) {
                 return pipeline.branchMaterial(branch);
-            }
-            else if (pipeline && !branch) {
+            } else if (pipeline && !branch) {
                 return pipeline.material;
-            }
-            else {
+            } else {
                 return undefined;
             }
         }
@@ -165,13 +163,13 @@ export class MultipleElements {
         this.updateSize();
 
         // Background
-        this.renderer.setClearColor( 0xffffff , 0); // Background Color
-        this.renderer.setScissorTest( false );
+        this.renderer.setClearColor(0xffffff, 0); // Background Color
+        this.renderer.setScissorTest(false);
         this.renderer.clear();
 
         // Scissor Area (square/rectangle area)
-        this.renderer.setClearColor( 0xffffff , 0); // Scissor Color
-        this.renderer.setScissorTest( true );
+        this.renderer.setClearColor(0xffffff, 0); // Scissor Color
+        this.renderer.setScissorTest(true);
 
         callback(this.renderer, this.glslInstances[id]);
     }
@@ -182,8 +180,8 @@ export class MultipleElements {
     updateSize() {
         let width = this.canvas.offsetWidth;
         let height = this.canvas.offsetHeight;
-        if ( this.canvas.width !== width || this.canvas.height !== height ) {
-            this.renderer.setSize( width, height , false);
+        if (this.canvas.width !== width || this.canvas.height !== height) {
+            this.renderer.setSize(width, height, false);
             for (let i = 0; i < Object.keys(this.glslInstances).length; ++i) {
                 let id = Object.keys(this.glslInstances)[i];
                 this.glslInstances[id].setSize(width, height);
@@ -210,4 +208,8 @@ export class MultipleElements {
 
         this.isDestroy = true;
     }
+}
+
+export {
+    MultipleElements
 }

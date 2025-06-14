@@ -1,4 +1,4 @@
-import LenisController from "./lenis.js";
+import {LenisController} from "../../utils";
 import imagesLoaded from 'imagesloaded';
 import FontFaceObserver from 'fontfaceobserver'
 
@@ -13,6 +13,11 @@ const timeout = 50000
  */
 function initScript(data, lenisOptions, beforeScriptCallback = function(){}, afterScriptCallback= function(){}) {
     window.lenisScroll = new LenisController(lenisOptions)
+
+    // Make default function value if undefined
+    if (!beforeScriptCallback) {
+        beforeScriptCallback = function() {}
+    }
 
     // Make default function value if undefined
     if (!afterScriptCallback) {

@@ -30,6 +30,12 @@ class LenisController {
         ScrollTrigger.refresh()
     }
 
+    normalScroll(time){
+        this.lenis.raf(time);
+        ScrollTrigger.update();
+        requestAnimationFrame(this.normalScroll);
+    }
+
     get scroll() {
         return this.lenis.scroll;
     }
@@ -47,8 +53,11 @@ class LenisController {
     init(options){
         this.options = options;
         this.lenis = new Lenis(this.options);
-        this.gsapScroll()
+        // this.gsapScroll();
+        requestAnimationFrame(this.normalScroll);
     }
 }
 
-export default LenisController;
+export {
+    LenisController
+}
