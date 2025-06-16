@@ -12,7 +12,10 @@ const timeout = 50000
  * @param {function || undefined} afterScriptCallback
  */
 function initScript(data, lenisOptions, beforeScriptCallback = function(){}, afterScriptCallback= function(){}) {
-    window.lenisScroll = new LenisController(lenisOptions)
+
+    if(window.matchMedia("(min-width: 600px)").matches){
+        window.lenisScroll = new LenisController(lenisOptions)
+    }
 
     // Make default function value if undefined
     if (!beforeScriptCallback) {
