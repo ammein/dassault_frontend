@@ -1,5 +1,5 @@
 // Import the TextSplitter class for handling text splitting.
-import { TextSplitter } from '../../utils';
+import { TextSplitter } from './index.js';
 
 // Defines a class to create scroll-triggered animation effects on text.
 export class BlurScrollEffect {
