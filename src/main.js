@@ -21,7 +21,6 @@ MyPages.allTransitions = [
 ]
 
 barba.init({
-    debug: true,
     views: [...MyPages.views],
     transitions: [...MyPages.transitions]
 })
