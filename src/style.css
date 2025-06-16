@@ -98,124 +98,6 @@
   --spacing-480-3840px: 3840px;
 }
 
-section{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-}
-
-canvas{
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-.text-scroll{
-  position: absolute;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-2-16px);
-  bottom: 54px;
-  width: 100%;
-
-  span{
-    color: var(--color-contrast);
-  }
-}
-
-.flex-container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: var(--spacing-6-48px);
-  align-self: center;
-  align-items: center;
-}
-
-.flex-container-start {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: var(--spacing-6-48px);
-  padding: 5% 0;
-  align-self: start;
-  align-items: center;
-}
-
-.flex-container-bottom {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: var(--spacing-6-48px);
-  padding: 5% 0;
-  align-self: end;
-  align-items: center;
-}
-
-.short-text-center{
-  padding: 0 20% !important;
-}
-
-.long-text-center{
-  padding: 0 2% !important;
-}
-
-.image{
-  position: absolute;
-  width: 100%;
-  left: 0;
-  height: 100vh;
-  z-index: -1;
-  object-fit: cover;
-  opacity: 0;
-}
-
-.title-chess{
-  color: var(--color-highlight-1);
-  text-align: center;
-  font-size: 9vw !important;
-}
-
-.title-features{
-  color: var(--color-highlight-1);
-  text-align: center;
-}
-
-.title-four-divisions{
-  color: var(--color-highlight-1);
-  text-align: center;
-}
-
-.title-shahtranj{
-  color: var(--color-highlight-1);
-  text-align: center;
-}
-
-.title-shahmat{
-  color: var(--color-highlight-1);
-  text-align: center;
-}
-
-.title-marcel-duchamp{
-  color: var(--color-highlight-1);
-  text-align: center;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.text-shadow-white{
-  text-shadow: 0 4px 4px var(--color-highlight-2);
-}
-
-.paragraph-center{
-  text-align: center;
-}
-
 /******************************************
 
                 Heading
@@ -354,4 +236,180 @@ canvas{
   font-style: var(--font-style-body);
   font-optical-sizing: var(--font-optical-sizing-body);
   line-height: var(--font-line-height-body-xxs);
+}
+
+/******************************************
+
+                Custom
+
+*******************************************/
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+canvas{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.text-scroll{
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-2-16px);
+  bottom: 54px;
+  width: 100%;
+
+  span{
+    color: var(--color-contrast);
+  }
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--spacing-6-48px);
+  align-self: center;
+  align-items: center;
+}
+
+.flex-container-start {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--spacing-6-48px);
+  padding: 5% 0;
+  align-self: start;
+  align-items: center;
+}
+
+.flex-container-bottom {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--spacing-6-48px);
+  padding: 5% 0;
+  align-self: end;
+  align-items: center;
+}
+
+.short-text-center{
+  padding: 0 20% !important;
+}
+
+.long-text-center{
+  padding: 0 2% !important;
+}
+
+.image{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.title-chess{
+  color: var(--color-highlight-1);
+  text-align: center;
+  font-size: 9vw !important;
+}
+
+.title-features{
+  color: var(--color-highlight-1);
+  text-align: center;
+}
+
+.title-four-divisions{
+  color: var(--color-highlight-1);
+  text-align: center;
+}
+
+.title-shahtranj{
+  color: var(--color-highlight-1);
+  text-align: center;
+}
+
+.title-shahmat{
+  color: var(--color-highlight-1);
+  text-align: center;
+}
+
+.title-marcel-duchamp{
+  color: var(--color-highlight-1);
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-shadow-white{
+  text-shadow: 0 4px 4px var(--color-highlight-2);
+}
+
+.paragraph-center{
+  text-align: center;
+}
+
+/******************************************
+
+                Mobile
+
+*******************************************/
+
+@media only screen and (max-width: 600px) {
+  p {
+    /* Paragraph-m */
+    font-family: var(--font-family-paragraph), sans-serif !important;
+    font-size: var(--font-size-body-m) !important;
+    font-style: var(--font-style-body) !important;
+    font-optical-sizing: var(--font-optical-sizing-body) !important;
+    line-height: var(--font-line-height-body-m) !important;
+  }
+
+  h2.title-marcel-duchamp{
+    font-family: var(--font-family-title), serif;
+    font-size: var(--font-size-heading-s);
+    font-style: var(--font-style-heading);
+    line-height: var(--font-line-height-heading-s);
+  }
+
+  .title-chess{
+    font-family: var(--font-family-title), serif !important;
+    font-size: var(--font-size-heading-l) !important;
+    font-style: var(--font-style-heading) !important;
+    line-height: var(--font-line-height-heading-l) !important;
+  }
+
+  .text-scroll > span {
+    font-family: var(--font-family-paragraph), sans-serif !important;
+    font-size: var(--font-size-body-xxs) !important;
+    font-style: var(--font-style-body) !important;
+    font-optical-sizing: var(--font-optical-sizing-body) !important;
+    line-height: var(--font-line-height-body-xxs) !important;
+  }
+
+  h2.heading-xl {
+    /* Heading-m */
+    font-family: var(--font-family-title), serif !important;
+    font-size: var(--font-size-heading-m);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--font-line-height-heading-m);
+  }
+
+  .content {
+    gap: var(--spacing-1_5-12px) !important;
+  }
 }
