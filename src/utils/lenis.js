@@ -33,7 +33,7 @@ class LenisController {
     normalScroll(time){
         this.lenis.raf(time);
         ScrollTrigger.update();
-        requestAnimationFrame(this.normalScroll);
+        requestAnimationFrame(this.normalScroll.bind(this));
     }
 
     get scroll() {
@@ -54,7 +54,7 @@ class LenisController {
         this.options = options;
         this.lenis = new Lenis(this.options);
         // this.gsapScroll();
-        requestAnimationFrame(this.normalScroll);
+        requestAnimationFrame(this.normalScroll.bind(this));
     }
 }
 

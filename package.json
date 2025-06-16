@@ -4,15 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite --force --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "removesub": "chmod +x ./scripts/submodule-remove.sh && ./scripts/submodule-remove.sh"
   },
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-glsl": "^1.5.0"
   },
   "dependencies": {
     "@barba/core": "^2.10.3",
+    "@theatre/core": "^0.7.2",
+    "@theatre/studio": "^0.7.2",
     "fontfaceobserver": "^2.3.0",
     "glsl-pipeline": "^4.1.0",
     "gsap": "^3.13.0",

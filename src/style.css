@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--color-contrast);
+  background-color: var(--color-base);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -112,7 +112,21 @@ canvas{
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: -10;
+  mix-blend-mode: screen;
+}
+
+.text-scroll{
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-2-16px);
+  bottom: 54px;
+  width: 100%;
+
+  span{
+    color: var(--color-contrast);
+  }
 }
 
 .flex-container {
@@ -124,9 +138,38 @@ canvas{
   align-items: center;
 }
 
+.flex-container-start {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--spacing-6-48px);
+  padding: 5% 0;
+  align-self: start;
+  align-items: center;
+}
+
+.flex-container-bottom {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--spacing-6-48px);
+  padding: 5% 0;
+  align-self: end;
+  align-items: center;
+}
+
+.short-text-center{
+  padding: 0 20% !important;
+}
+
+.long-text-center{
+  padding: 0 2% !important;
+}
+
 .image{
   position: absolute;
-  width: 100vw;
+  width: 100%;
+  left: 0;
   height: 100vh;
   z-index: -1;
   object-fit: cover;
@@ -137,6 +180,26 @@ canvas{
   color: var(--color-highlight-1);
   text-align: center;
   font-size: 9vw !important;
+}
+
+.title-features{
+  color: var(--color-highlight-1);
+  text-align: center;
+}
+
+.title-four-divisions{
+  color: var(--color-highlight-1);
+  text-align: center;
+}
+
+.title-shahtranj{
+  color: var(--color-highlight-1);
+  text-align: center;
+}
+
+.title-shahmat{
+  color: var(--color-highlight-1);
+  text-align: center;
 }
 
 .title-marcel-duchamp{
