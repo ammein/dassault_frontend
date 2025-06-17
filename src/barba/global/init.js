@@ -42,7 +42,7 @@ function runScript(data, beforeScriptCallback, afterScriptCallback) {
     });
 
     const Paragraph = new Promise(resolve => {
-        new FontFaceObserver("Ultra").load(null, timeout).then(()=> resolve())
+        new FontFaceObserver("Lexend").load(null, timeout).then(()=> resolve())
     });
 
     Promise.all([preloadImages, Heading, Paragraph]).then(() => {
